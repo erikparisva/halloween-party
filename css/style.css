@@ -1,5 +1,5 @@
 :root {
-    --yellow: yellow;
+    --yellow: rgb(255, 198, 42);
     --black: black;
     --orange: orange;
 }
@@ -22,10 +22,20 @@ body {
 
 .party {
     grid-area: party;
-    min-height: 450px;
+    min-height: 500px;
     background-image: url(../img/444433139_07f009d661_b.jpg);
     background-size: cover;
-    background-position-y: -10rem;
+    background-position-y: -8rem;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+}
+.party > * {
+    background: var(--yellow);
+    padding: 5px;
 }
 .cta {
     background: var(--yellow);
@@ -46,4 +56,51 @@ body {
 }
 .cta p {
     margin: 0;
+}
+.button {
+    background: var(--yellow);
+    border: 0;
+    padding: 20px;
+}
+.menu ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu a {
+    background: var(--yellow);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+/*hide menu button*/
+[aria-controls="menu-list"] {
+    display: none;
+}
+
+.features {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 10px;
+}
+.feature {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px rgb(53, 53, 53);
+}
+.feature .icon {
+    font-size: 3rem;
+}
+.feature p {
+    color: rgba(0,0,0,0.5)
 }
