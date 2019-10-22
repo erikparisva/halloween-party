@@ -62,8 +62,38 @@
             </div>
         </div>
         <div class="about">
-            <img src="" alt="">
+            <img class="foodpic" src="img/eb9xolvwadd21.jpg" alt="cum borgar">
+            <div class="about__details">
+                <p>Featured Sandwich</p>
+                <p>Tastes terribly bad</p>
+                <p>This is the sandwich you've never wanted</p>
+                <button>Learn more</button>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>Instant Grams</h2>
+            <img src="https://source.unsplash.com/random/201x201" alt="">
+            <img src="https://source.unsplash.com/random/202x202" alt="">
+            <img src="https://source.unsplash.com/random/203x203" alt="">
+            <img src="https://source.unsplash.com/random/204x204" alt="">
+            <img src="https://source.unsplash.com/random/205x205" alt="">
+            <img src="https://source.unsplash.com/random/206x206" alt="">
+            <img src="https://source.unsplash.com/random/207x207" alt="">
+            <img src="https://source.unsplash.com/random/208x208" alt="">
+            <img src="https://source.unsplash.com/random/209x209" alt="">
         </div>
     </div>
+    
+    <script>
+        const menuButton = document.querySelector('button[aria-expanded]');
+
+        function toggleMenu({target}){
+            const expanded = target.getAttribute('aria-expanded') == 'true' || false;
+            menuButton.setAttribute('aria-expanded',!expanded);
+            console.log("toggled");
+        }
+        menuButton.addEventListener('click',toggleMenu);
+    </script>
 </body>
 </html>
