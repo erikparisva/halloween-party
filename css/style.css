@@ -12,6 +12,10 @@ body {
     background: linear-gradient(to right, var(--orange),var(--black));
     margin: 20px;
 }
+.wrapper {
+    display: grid;
+    gap: 20px;
+}
 .top {
     display:grid;
     gap: 20px;
@@ -35,7 +39,6 @@ body {
 }
 .party > * {
     background: var(--yellow);
-    padding: 5px;
 }
 .cta {
     background: var(--yellow);
@@ -57,10 +60,11 @@ body {
 .cta p {
     margin: 0;
 }
-.button {
+
+button {
     background: var(--yellow);
     border: 0;
-    padding: 20px;
+    padding: 10px;
 }
 .menu ul {
     display: grid;
@@ -90,7 +94,6 @@ body {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 10px;
 }
 .feature {
     background: white;
@@ -141,4 +144,60 @@ body {
     content: "";
     height: 20px;
     background: linear-gradient(to right, var(--yellow), transparent);
+}
+@media (max-width: 1000px) {
+    .menu {
+        order: -1;
+    }
+    [aria-controls="menu-list"] {
+        display: block;
+        margin-bottom: 20px;
+    }
+    [aria-expanded="false"] .close {
+        display: none;
+    }
+    [aria-expanded="true"] .open {
+        display: none;
+    }
+
+    .menu ul {
+        max-height: 0;
+        overflow: hidden;
+        transform: rotateX(90deg);
+        transition: all 0.5s;
+    }
+
+    [aria-expanded="true"] ~ ul {
+        display: grid;
+        max-height: 500px;
+        transform: rotateX(0);
+        transition: all 0.5s;
+    }
+    
+}
+@media (max-width: 780px){
+    body {
+        margin: 0;
+    }
+
+    .top{
+        grid-template-areas:
+        "party party"
+        "cta1 cta2"
+    }
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .about img {
+        width: 85%;
+    }
+}
+
+@media (max-width: 580px) {
+    .top {
+        grid-template-areas:
+        "party"
+        "cta1"
+        "cta"
+    }
 }
